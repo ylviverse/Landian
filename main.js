@@ -138,12 +138,5 @@ playVideoBtn.addEventListener('click', () => {
   }
 });
 
-backBtn.addEventListener('click', () => {
-  videoScreen.classList.add('hidden');
-  celebrationScreen.classList.remove('hidden');
-  
-  // Pause and reset video
-  videoPlayer.pause();
-  videoPlayer.currentTime = 0;
-});
+
 
