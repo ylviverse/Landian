@@ -21,7 +21,7 @@ document.querySelector('#app').innerHTML = `
           No
         </button>
       </div>
-      <div class="text-gray-600 text-lg italic">
+      <div class="text-gray-600 text-base italic">
         (Press no hehe)
       </div>
     </div>
@@ -30,8 +30,8 @@ document.querySelector('#app').innerHTML = `
   <div id="celebration-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-yellow-100 to-pink-200">
     <div class="text-center p-8 max-w-2xl">
       <div id="celebration-animation" class="w-96 h-96 mx-auto mb-8"></div>
-      <h1 class="text-6xl font-bold text-gray-800 mb-4"> YAYYYY!</h1>
-      <p class="text-2xl text-gray-700 mb-6"> Pogi kayka dooo and I really want to get to know u better</p>
+      <h1 class="text-4xl font-bold text-gray-800 mb-4"> YAYYYY!</h1>
+      <p class="text-lg text-gray-700 mb-6"> Pogi kayka dooo and I really want to get to know u better</p>
       <button id="joke-no-btn" class="btn-scale bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
         REAL Rejection Botton :(
       </button>
@@ -41,8 +41,8 @@ document.querySelector('#app').innerHTML = `
   <div id="sad-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-blue-200">
     <div class="text-center p-8 max-w-2xl">
       <div id="sad-animation" class="w-96 h-96 mx-auto mb-8"></div>
-      <h1 class="text-6xl font-bold text-gray-800 mb-4">Awtsss..</h1>
-      <p class="text-2xl text-gray-700 mb-6"> char btawwww, I just wanna say na I have a crush on u. Enjoy ur day and amping permi hehe </p>
+      <h1 class="text-4xl font-bold text-gray-800 mb-4">Awtsss..</h1>
+      <p class="text-lg text-gray-700 mb-6"> char btawwww, I just wanna say na I have a crush on u. Enjoy ur day and amping permi hehe </p>
       <button id="play-video-btn" class="btn-scale bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
         Play this 
       </button>
