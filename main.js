@@ -55,9 +55,7 @@ document.querySelector('#app').innerHTML = `
         <source src="./assets/him.mp4" type="video/mp4"> 
         Your browser does not support the video tag.
       </video>
-      <button id="back-btn" class="mt-6 btn-scale bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
-        Go Back
-      </button>
+      
     </div>
   </div>
 `
@@ -133,8 +131,12 @@ playVideoBtn.addEventListener('click', () => {
     sadScreen.classList.add('hidden');
     videoScreen.classList.remove('hidden');
     
-    // Play video
-    videoPlayer.play();
+    // Play video with error handling for mobile
+    videoPlayer.play().catch(error => {
+      console.log('Autoplay prevented:', error);
+      // If autoplay fails, just show the video with controls
+      videoPlayer.controls = true;
+    });
   }
 });
 
