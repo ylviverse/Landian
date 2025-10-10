@@ -2,6 +2,7 @@ import './style.css'
 import lottie from 'lottie-web'
 import proposalAnimationData from './assets/cute.json'
 import celebrationAnimationData from './assets/yay.json'
+import sadAnimationData from './assets/sad.json' // Add a sad animation JSON
 
 let yesButtonScale = 1;
 let noButtonClicks = 0;
@@ -20,7 +21,7 @@ document.querySelector('#app').innerHTML = `
         </button>
       </div>
       <div class="text-gray-600 text-lg italic">
-        pls pls pls :>
+        taking my shot hehe
       </div>
     </div>
   </div>
@@ -28,8 +29,20 @@ document.querySelector('#app').innerHTML = `
   <div id="celebration-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-yellow-100 to-pink-200">
     <div class="text-center p-8 max-w-2xl">
       <div id="celebration-animation" class="w-96 h-96 mx-auto mb-8"></div>
-      <h1 class="text-6xl font-bold text-gray-800 mb-4">YAYYYY!</h1>
-      <p class="text-2xl text-gray-700">HAHHAAHAH PAPANSIN RAJUD KO NMO SORRY!</p>
+      <h1 class="text-6xl font-bold text-gray-800 mb-4"> YAYYYY!</h1>
+      <p class="text-2xl text-gray-700 mb-6">me din yes yes yes frfr. </p>
+      <button id="joke-no-btn" class="btn-scale bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
+        REAL Rejection Botton :(
+      </button>
+    </div>
+  </div>
+
+  <div id="sad-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-blue-200">
+    <div class="text-center p-8 max-w-2xl">
+      <div id="sad-animation" class="w-96 h-96 mx-auto mb-8"></div>
+      <h1 class="text-6xl font-bold text-gray-800 mb-4">Awtsss..😢</h1>
+      <p class="text-2xl text-gray-700 mb-6">char, enjoy ur day poooo :3 </p>
+      
     </div>
   </div>
 `
@@ -44,8 +57,10 @@ const proposalAnimation = lottie.loadAnimation({
 
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
+const jokeNoBtn = document.getElementById('joke-no-btn');
 const proposalScreen = document.getElementById('proposal-screen');
 const celebrationScreen = document.getElementById('celebration-screen');
+const sadScreen = document.getElementById('sad-screen');
 
 yesBtn.addEventListener('click', () => {
     proposalScreen.classList.add('hidden');
@@ -70,4 +85,17 @@ noBtn.addEventListener('click', () => {
   if (noButtonClicks >= 5) {
     noBtn.style.display = 'none';
   }
+});
+
+jokeNoBtn.addEventListener('click', () => {
+  celebrationScreen.classList.add('hidden');
+  sadScreen.classList.remove('hidden');
+
+  lottie.loadAnimation({
+    container: document.getElementById('sad-animation'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: sadAnimationData 
+  });
 });
