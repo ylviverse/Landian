@@ -10,7 +10,7 @@ document.querySelector('#app').innerHTML = `
   <div id="proposal-screen" class="flex items-center justify-center min-h-screen bg-gradient-to-br from-pink-100 to-pink-200">
     <div class="text-center p-8 max-w-2xl">
       <div id="lottie-animation" class="w-64 h-64 mx-auto mb-0"></div>
-      <h1 class="text-5xl font-bold text-gray-800 mb-3">Hi Bri, Pede kabang landiin huhu?</h1>
+      <h1 class="text-5xl font-bold text-gray-800 mb-3">Hi Bri, May crush kaba sakin huhu?</h1>
       <div class="flex gap-6 justify-center items-end mb-4">
         <button id="yes-btn" class="btn-scale bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full shadow-lg">
           YES!
