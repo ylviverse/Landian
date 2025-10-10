@@ -41,7 +41,7 @@ const proposalAnimation = lottie.loadAnimation({
     autoplay: true,
     animationData: proposalAnimationData 
   });
-
+  
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
 const proposalScreen = document.getElementById('proposal-screen');
