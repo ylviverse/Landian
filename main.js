@@ -49,13 +49,15 @@ document.querySelector('#app').innerHTML = `
     </div>
   </div>
 
-  <div id="video-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-100 to-pink-200">
+ <div id="video-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-100 to-pink-200">
     <div class="text-center p-8 max-w-4xl w-full">
-      <video id="video-player" class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl" controls autoplay>
-        <source src="./assets/him.mp4" type="video/mp4"> 
+      <video id="video-player" class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl" controls playsinline webkit-playsinline preload="metadata">
+        <source src="/assets/him.mp4" type="video/mp4"> 
         Your browser does not support the video tag.
       </video>
-      
+      <button id="back-btn" class="mt-6 btn-scale bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
+        Go Back
+      </button>
     </div>
   </div>
 `
