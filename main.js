@@ -2,10 +2,11 @@ import './style.css'
 import lottie from 'lottie-web'
 import proposalAnimationData from './assets/cute.json'
 import celebrationAnimationData from './assets/yay.json'
-import sadAnimationData from './assets/sad.json' // Add a sad animation JSON
+import sadAnimationData from './assets/sad.json'
 
 let yesButtonScale = 1;
 let noButtonClicks = 0;
+let videoPlaying = false;
 
 document.querySelector('#app').innerHTML = `
   <div id="proposal-screen" class="flex items-center justify-center min-h-screen bg-gradient-to-br from-pink-100 to-pink-200">
@@ -42,7 +43,21 @@ document.querySelector('#app').innerHTML = `
       <div id="sad-animation" class="w-96 h-96 mx-auto mb-8"></div>
       <h1 class="text-6xl font-bold text-gray-800 mb-4">Awtsss..😢</h1>
       <p class="text-2xl text-gray-700 mb-6">char, enjoy ur day poooo :3 </p>
-      
+      <button id="play-video-btn" class="btn-scale bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
+        Press this if u dont mean it 🎬
+      </button>
+    </div>
+  </div>
+
+  <div id="video-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-100 to-pink-200">
+    <div class="text-center p-8 max-w-4xl w-full">
+      <video id="video-player" class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl" controls autoplay>
+        <source src="./assets/him.mp4" type="video/mp4"> 
+        Your browser does not support the video tag.
+      </video>
+      <button id="back-btn" class="mt-6 btn-scale bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
+        Go Back
+      </button>
     </div>
   </div>
 `
@@ -58,9 +73,13 @@ const proposalAnimation = lottie.loadAnimation({
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
 const jokeNoBtn = document.getElementById('joke-no-btn');
+const playVideoBtn = document.getElementById('play-video-btn');
+const backBtn = document.getElementById('back-btn');
 const proposalScreen = document.getElementById('proposal-screen');
 const celebrationScreen = document.getElementById('celebration-screen');
 const sadScreen = document.getElementById('sad-screen');
+const videoScreen = document.getElementById('video-screen');
+const videoPlayer = document.getElementById('video-player');
 
 yesBtn.addEventListener('click', () => {
     proposalScreen.classList.add('hidden');
@@ -98,4 +117,40 @@ jokeNoBtn.addEventListener('click', () => {
     autoplay: true,
     animationData: sadAnimationData 
   });
+});
+
+playVideoBtn.addEventListener('click', () => {
+  if (!videoPlaying) {
+    videoPlaying = true;
+    
+    // Change button text
+    playVideoBtn.textContent = '🎬 Loading... 🎬';
+    playVideoBtn.disabled = true;
+    playVideoBtn.style.cursor = 'not-allowed';
+    playVideoBtn.style.opacity = '0.6';
+    
+    // Show video screen
+    sadScreen.classList.add('hidden');
+    videoScreen.classList.remove('hidden');
+    
+    // Play video
+    videoPlayer.play();
+  }
+});
+
+backBtn.addEventListener('click', () => {
+  videoScreen.classList.add('hidden');
+  celebrationScreen.classList.remove('hidden');
+  
+  // Pause and reset video
+  videoPlayer.pause();
+  videoPlayer.currentTime = 0;
+});
+
+// Optional: Auto go back when video ends
+videoPlayer.addEventListener('ended', () => {
+  setTimeout(() => {
+    videoScreen.classList.add('hidden');
+    celebrationScreen.classList.remove('hidden');
+  }, 1000);
 });
