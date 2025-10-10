@@ -49,15 +49,12 @@ document.querySelector('#app').innerHTML = `
     </div>
   </div>
 
- <div id="video-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-100 to-pink-200">
-    <div class="text-center p-8 max-w-4xl w-full">
-      <video id="video-player" class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl" controls playsinline webkit-playsinline preload="metadata">
+  <div id="video-screen" class="hidden flex items-center justify-center min-h-screen bg-black">
+    <div class="w-full h-full">
+      <video id="video-player" class="w-full h-full object-cover" controls playsinline webkit-playsinline preload="metadata">
         <source src="/assets/him.mp4" type="video/mp4"> 
         Your browser does not support the video tag.
       </video>
-      <button id="back-btn" class="mt-6 btn-scale bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
-        Go Back
-      </button>
     </div>
   </div>
 `
@@ -70,17 +67,16 @@ const proposalAnimation = lottie.loadAnimation({
     animationData: proposalAnimationData 
   });
 
-const yesBtn = document.getElementById('yes-btn');
-const noBtn = document.getElementById('no-btn');
-const jokeNoBtn = document.getElementById('joke-no-btn');
-const playVideoBtn = document.getElementById('play-video-btn');
-const backBtn = document.getElementById('back-btn');
-const proposalScreen = document.getElementById('proposal-screen');
-const celebrationScreen = document.getElementById('celebration-screen');
-const sadScreen = document.getElementById('sad-screen');
-const videoScreen = document.getElementById('video-screen');
-const videoPlayer = document.getElementById('video-player');
-
+  const yesBtn = document.getElementById('yes-btn');
+  const noBtn = document.getElementById('no-btn');
+  const jokeNoBtn = document.getElementById('joke-no-btn');
+  const playVideoBtn = document.getElementById('play-video-btn');
+  const proposalScreen = document.getElementById('proposal-screen');
+  const celebrationScreen = document.getElementById('celebration-screen');
+  const sadScreen = document.getElementById('sad-screen');
+  const videoScreen = document.getElementById('video-screen');
+  const videoPlayer = document.getElementById('video-player');
+  
 yesBtn.addEventListener('click', () => {
     proposalScreen.classList.add('hidden');
     celebrationScreen.classList.remove('hidden');
@@ -151,10 +147,3 @@ backBtn.addEventListener('click', () => {
   videoPlayer.currentTime = 0;
 });
 
-// Optional: Auto go back when video ends
-videoPlayer.addEventListener('ended', () => {
-  setTimeout(() => {
-    videoScreen.classList.add('hidden');
-    celebrationScreen.classList.remove('hidden');
-  }, 1000);
-});
