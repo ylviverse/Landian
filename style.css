@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -28,3 +30,25 @@
     transform: scale(0.95);
   }
   
+
+/* Hide any Vercel injected footer */
+body > footer,
+html > footer,
+[class*="footer"],
+[id*="footer"] {
+  display: none !important;
+}
+
+/* Ensure full height coverage */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#app {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
