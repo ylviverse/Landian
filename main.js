@@ -29,7 +29,7 @@ document.querySelector('#app').innerHTML = `
     <div class="text-center p-8 max-w-2xl">
       <div id="celebration-animation" class="w-96 h-96 mx-auto mb-8"></div>
       <h1 class="text-6xl font-bold text-gray-800 mb-4">YAYYYY!</h1>
-      <p class="text-2xl text-gray-700">HEHEHEHEHEHEHEHE :> !</p>
+      <p class="text-2xl text-gray-700">HAHHAAHAH PAPANSIN RAJUD KO NMO SORRY!</p>
     </div>
   </div>
 `
@@ -41,7 +41,7 @@ const proposalAnimation = lottie.loadAnimation({
     autoplay: true,
     animationData: proposalAnimationData 
   });
-  
+
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
 const proposalScreen = document.getElementById('proposal-screen');
