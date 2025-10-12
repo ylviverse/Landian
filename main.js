@@ -42,7 +42,7 @@ document.querySelector('#app').innerHTML = `
     <div class="text-center p-8 max-w-2xl">
       <div id="sad-animation" class="w-96 h-96 mx-auto mb-8"></div>
       <h1 class="text-4xl font-bold text-gray-800 mb-4">Awtsss..</h1>
-      <p class="text-lg text-gray-700 mb-6"> char btawwww, I just wanna say na I have a crush on u. Enjoy ur day and amping permi hehe </p>
+      <p class="text-lg text-gray-700 mb-6"> char btawwww, I just wanna say lang na I have a crush on u for quite a while. Its so embarrasing lang kay you're so much younger. Sge man gud kag like so nag assume pud ko pero btaww Enjoy ur day and amping permi hehe </p>
       <button id="play-video-btn" class="btn-scale bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
         Play this 
       </button>
