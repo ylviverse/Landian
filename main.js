@@ -2,7 +2,7 @@ import './style.css'
 import lottie from 'lottie-web'
 import proposalAnimationData from './assets/cute.json'
 import celebrationAnimationData from './assets/yay.json'
-import sadAnimationData from './assets/sad.json'
+import sadAnimationData from './assets/cake.json'
 
 let yesButtonScale = 1;
 let noButtonClicks = 0;
@@ -12,7 +12,7 @@ document.querySelector('#app').innerHTML = `
   <div id="proposal-screen" class="flex items-center justify-center min-h-screen bg-gradient-to-br from-pink-100 to-pink-200">
     <div class="text-center p-8 max-w-2xl">
       <div id="lottie-animation" class="w-64 h-64 mx-auto mb-0"></div>
-      <h1 class="text-5xl font-bold text-gray-800 mb-3">Hi Bri, Are you single po ba?</h1>
+      <h1 class="text-5xl font-bold text-gray-800 mb-3">Hi Lot, want mo ba surpirse?</h1>
       <div class="flex gap-6 justify-center items-end mb-4">
         <button id="yes-btn" class="btn-scale bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full shadow-lg">
           YES!
@@ -21,19 +21,17 @@ document.querySelector('#app').innerHTML = `
           No
         </button>
       </div>
-      <div class="text-gray-600 text-base italic">
-        (Press no hehe)
-      </div>
+      
     </div>
   </div>
 
   <div id="celebration-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-yellow-100 to-pink-200">
     <div class="text-center p-8 max-w-2xl">
       <div id="celebration-animation" class="w-96 h-96 mx-auto mb-8"></div>
-      <h1 class="text-4xl font-bold text-gray-800 mb-4"> YAYYYY!</h1>
-      <p class="text-lg text-gray-700 mb-6"> Pogi kayka dooo and I really want to get to know u better</p>
+      <h1 class="text-4xl font-bold text-gray-800 mb-4"> MWAPSS</h1>
+      <p class="text-lg text-gray-700 mb-6"> </p>
       <button id="joke-no-btn" class="btn-scale bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
-        REAL Rejection Botton :(
+        Pindotin mo ito duh
       </button>
     </div>
   </div>
@@ -41,8 +39,8 @@ document.querySelector('#app').innerHTML = `
   <div id="sad-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-blue-200">
     <div class="text-center p-8 max-w-2xl">
       <div id="sad-animation" class="w-96 h-96 mx-auto mb-8"></div>
-      <h1 class="text-4xl font-bold text-gray-800 mb-4">Awtsss..</h1>
-      <p class="text-lg text-gray-700 mb-6"> char btawwww, I just wanna say lang na I have a crush on u for quite a while. Its so embarrasing lang kay you're so much younger. Sge man gud kag like so nag assume pud ko pero btaww Enjoy ur day and amping permi hehe </p>
+      <h1 class="text-4xl font-bold text-gray-800 mb-4">HAPPIEST BIRTHDAY KYLE HEHE</h1>
+      <p class="text-lg text-gray-700 mb-6"> Wishing you lots of smiles,  and Love. May your year be full of peace, growth, and little things that makes you happy. Welcome sa 20's, amping permi and don't forget to take care of yourself :3 </p>
       <button id="play-video-btn" class="btn-scale bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
         Play this 
       </button>
@@ -52,7 +50,7 @@ document.querySelector('#app').innerHTML = `
   <div id="video-screen" class="hidden flex items-center justify-center min-h-screen bg-black">
     <div class="w-full h-full">
       <video id="video-player" class="w-full h-full object-cover" controls playsinline webkit-playsinline preload="metadata">
-        <source src="/assets/him.mp4" type="video/mp4">
+        <source src="/assets/birthday.MP4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
