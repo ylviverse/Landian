@@ -24,7 +24,7 @@ document.querySelector('#app').innerHTML = `
       <div class="w-64 h-64 sm:w-96 sm:h-96 mx-auto mb-4 sm:mb-8 flex items-center justify-center">
         <div id="sad-animation" class="w-full h-full"></div>
       </div>
-      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4 px-4">HAPPIEST BIRTHDAY Leo  ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4 px-4">HAPPIEST BIRTHDAY <br> Leo  ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
       <p class="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 px-4">Wishing you lots of smiles, and Love. May your year be full of peace, growth, and little things that makes you happy. Welcome sa 20's, amping permi and don't forget to value yourself above all else :3</p>
       <button id="continue-btn" class="btn-scale bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
         MAKE A WISH
