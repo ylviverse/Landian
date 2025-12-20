@@ -12,20 +12,21 @@ document.querySelector('#app').innerHTML = `
       <div class="w-64 h-64 mx-auto mb-0 flex items-center justify-center">
         <div id="lottie-animation" class="w-full h-full"></div>
       </div>
-      <h1 class="text-5xl font-bold text-gray-800 mb-3 px-4">HI LEW! MADE SOMETHING FOR YOU HEHE ᥫ᭡.</h1>
+      <h1 class="text-5xl font-bold text-gray-800 mb-3 px-4">HI LEW! MADE SOMETHING FOR YOU HEHEHE ᥫ᭡.</h1>
       <button id="next-btn" class="btn-scale bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full shadow-lg mt-6">
         Next
       </button>
     </div>
   </div>
 
-  <div id="sad-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-blue-200 overflow-y-auto py-8">
-    <div class="text-center p-4 sm:p-8 max-w-2xl w-full px-6 my-auto">
+  <div id="sad-screen" class="hidden flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-blue-200 overflow-y-auto py-8 relative">
+    <div id="tulips-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+    <div class="text-center p-4 sm:p-8 max-w-2xl w-full px-6 my-auto relative z-10">
       <div class="w-64 h-64 sm:w-96 sm:h-96 mx-auto mb-4 sm:mb-8 flex items-center justify-center">
         <div id="sad-animation" class="w-full h-full"></div>
       </div>
       <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4 px-4">HAPPIEST BIRTHDAY <br> Leo  ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
-      <p class="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 px-4">Wishing you lots of smiles, and Love. May your year be full of peace, growth, and little things that makes you happy. Welcome sa 20's, amping permi and don't forget to value yourself above all else :3</p>
+      <p class="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 px-4">Wishing you lots of smiles, and Love. May your year be full of peace, growth, and little things that makes you happy. Welcome sa 20s, amping permi and don't forget to value yourself above all else :3</p>
       <button id="continue-btn" class="btn-scale bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
         MAKE A WISH
       </button>
@@ -72,6 +73,7 @@ const celebrationScreen = document.getElementById('celebration-screen');
 const videoScreen = document.getElementById('video-screen');
 const videoPlayer = document.getElementById('video-player');
 const countdownElement = document.getElementById('countdown');
+const tulipsContainer = document.getElementById('tulips-container');
 
 nextBtn.addEventListener('click', () => {
   proposalScreen.classList.add('hidden');
@@ -84,6 +86,9 @@ nextBtn.addEventListener('click', () => {
     autoplay: true,
     animationData: celebrationAnimationData
   });
+
+  // Create tulips when entering the birthday screen
+  createTulips();
 });
 
 continueBtn.addEventListener('click', () => {
@@ -113,10 +118,43 @@ function startCountdown() {
       countdownElement.textContent = timeLeft;
     } else {
       clearInterval(countdownInterval);
-      // Play video
-      playVideo();
+      // Play video after countdown
+      setTimeout(() => {
+        playVideo();
+      }, 500);
     }
   }, 1000);
+}
+
+function createTulips() {
+  const tulipEmojis = ['🤍', '💕', '🌼', '🌸'];
+  
+  for (let i = 0; i < 30; i++) {
+    setTimeout(() => {
+      const tulip = document.createElement('div');
+      tulip.textContent = tulipEmojis[Math.floor(Math.random() * tulipEmojis.length)];
+      tulip.style.position = 'absolute';
+      tulip.style.fontSize = Math.random() * 20 + 30 + 'px';
+      tulip.style.left = Math.random() * 100 + '%';
+      tulip.style.top = '-50px';
+      tulip.style.opacity = '0.8';
+      tulip.style.transition = 'all 3s linear';
+      tulip.style.transform = `rotate(${Math.random() * 360}deg)`;
+      
+      tulipsContainer.appendChild(tulip);
+      
+      // Animate falling
+      setTimeout(() => {
+        tulip.style.top = '100vh';
+        tulip.style.transform = `rotate(${Math.random() * 720}deg)`;
+      }, 100);
+      
+      // Remove after animation
+      setTimeout(() => {
+        tulip.remove();
+      }, 3100);
+    }, i * 100);
+  }
 }
 
 function playVideo() {
