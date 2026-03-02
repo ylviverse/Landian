@@ -12,7 +12,7 @@ document.querySelector('#app').innerHTML = `
       <div class="w-64 h-64 mx-auto mb-0 flex items-center justify-center">
         <div id="lottie-animation" class="w-full h-full"></div>
       </div>
-      <h1 class="text-5xl font-bold text-gray-800 mb-3 px-4">HI LEW! MADE SOMETHING FOR YOU HEHEHE ᥫ᭡.</h1>
+      <h1 class="text-5xl font-bold text-gray-800 mb-3 px-4">HI HANDSOME! MADE SOMETHING FOR YOU HEHEHE ᥫ᭡.</h1>
       <button id="next-btn" class="btn-scale bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full shadow-lg mt-6">
         Next
       </button>
@@ -25,7 +25,7 @@ document.querySelector('#app').innerHTML = `
       <div class="w-64 h-64 sm:w-96 sm:h-96 mx-auto mb-4 sm:mb-8 flex items-center justify-center">
         <div id="sad-animation" class="w-full h-full"></div>
       </div>
-      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4 px-4">HAPPIEST BIRTHDAY <br> Leo  ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4 px-4">HAPPIEST BIRTHDAY <br> Handsome Harrold  ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
       <p class="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 px-4">Wishing you lots of smiles, and Love. May your year be full of peace, growth, and little things that makes you happy. Welcome sa 20s, amping permi and don't forget to value yourself above all else :3</p>
       <button id="continue-btn" class="btn-scale bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
         MAKE A WISH
@@ -49,7 +49,7 @@ document.querySelector('#app').innerHTML = `
   <div id="video-screen" class="hidden flex items-center justify-center min-h-screen bg-black">
     <div class="w-full h-full">
       <video id="video-player" class="w-full h-full object-cover" controls playsinline webkit-playsinline preload="metadata">
-        <source src="/assets/birthday.mov" type="video/mp4">
+        <source src="/assets/handsome.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
